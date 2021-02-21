@@ -43,11 +43,11 @@ public class Main {
        
 
 
-        Books bookone = null;
+        Book bookone = null;
         try {
             FileInputStream fileIn = new FileInputStream("D:\\konyvek\\projekt1\\dokumentum.txt");
             ObjectInputStream in = new ObjectInputStream(fileIn);
-            bookone = (Books) in.readObject();
+            bookone = (Book) in.readObject();
             in.close();
             fileIn.close();
         } catch (IOException i) {
