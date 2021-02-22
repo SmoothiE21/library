@@ -45,7 +45,7 @@ public class Konyvlista implements  Serializable{
     public void KiListaz(){
         for(Book konyv : konyvek)
             
-        System.out.println("Cim: "+ konyv.getCim()+ "\n" + "Iró: " +  konyv.getIro()+ "\n" + "Azonositó: " +konyv.getAzonosito()+ "\n"+ "Kiadás éve: " + konyv.getKiadas_eve()+ "\n"+ "Kiadó: " + konyv.getKiado()+"\n"+ "Elérheto: " + konyv.isHozzaferheto()+"\n" );
+        System.out.println("Cim: "+ konyv.getCim()+ "\n" + "Iró: " +  konyv.getIro()+ "\n" + "Azonositó: " +konyv.getAzonosito()+ "\n"+ "Kiadás éve: " + konyv.getKiadas_eve()+ "\n"+ "Kiadó: " + konyv.getKiado()+"\n"+ "Elérheto: " + konyv.isHozzaferheto()+"\n" + "Tárgyszavak: " + konyv.getTargyszavak()+ "\n" );
     }
     
         public  Book Kereses(String Azonosito){

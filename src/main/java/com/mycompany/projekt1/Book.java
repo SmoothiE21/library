@@ -25,7 +25,7 @@ public class Book implements java.io.Serializable {
 
 
 
-        public Book(String azonosito, String cim, String iro, String kiado, int kiadas_eve, boolean hozzaferheto) {
+        public Book(String azonosito, String cim, String iro, String kiado, int kiadas_eve, boolean hozzaferheto,ArrayList<String> targyszavak) {
         this.azonosito = azonosito;
         this.cim = cim;
         this.iro = iro;
