@@ -3,10 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.projekt1;
+package lists;
 
 
 
+import classes.Book;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
@@ -22,8 +23,7 @@ import java.util.Scanner;
  */
 
 
-public class Konyvlista implements  Serializable{
-    
+public class Konyvlista implements  Serializable{ 
     public List<Book> konyvek; 
     
     public Konyvlista(){
@@ -33,6 +33,7 @@ public class Konyvlista implements  Serializable{
     public void csatolLista(Book konyv){
         konyvek.add(konyv);
     }
+    
     public Boolean torles(String Azonosito){
         for(Book konyv : konyvek){
             if(konyv.getAzonosito().equals(Azonosito))
@@ -48,7 +49,7 @@ public class Konyvlista implements  Serializable{
         System.out.println("Cim: "+ konyv.getCim()+ "\n" + "Iró: " +  konyv.getIro()+ "\n" + "Azonositó: " +konyv.getAzonosito()+ "\n"+ "Kiadás éve: " + konyv.getKiadas_eve()+ "\n"+ "Kiadó: " + konyv.getKiado()+"\n"+ "Elérheto: " + konyv.isHozzaferheto()+"\n" + "Tárgyszavak: " + konyv.getTargyszavak()+ "\n" );
     }
     
-        public  Book Kereses(String Azonosito){
+    public  Book Kereses(String Azonosito){
         for(Book konyv : konyvek){
             if(konyv.getAzonosito().equals(Azonosito))
                 return konyv;
@@ -56,6 +57,7 @@ public class Konyvlista implements  Serializable{
         }
         return null;
     }
+    
     public Boolean KonyvlistaMentes(){
         String filename = "konyvek.txt";
         try{
@@ -70,21 +72,7 @@ public class Konyvlista implements  Serializable{
         }
         return false;
     }
-    public Boolean konyvlistaBetoltes(){
-        String filename = "konyvek.txt";
-        try{
-            FileInputStream file = new FileInputStream(filename);
-            ObjectInputStream out2 = new ObjectInputStream(file);
-            List<Book> uj_Lista = new ArrayList<Book>();
-            uj_Lista = (List<Book>) out2.readObject();
-            konyvek = uj_Lista;
-            return true;
-        }catch(Exception e){
-            e.printStackTrace();
-            
-        }
-        return false;
-    } 
+    
     public List<Book> konyvlistaBetoltesFROMTXT(){
         String filename = "konyvek.txt";
         try{
@@ -105,7 +93,8 @@ public class Konyvlista implements  Serializable{
     public int Meret(){
         return konyvek.size();
     }
-    public void ListaModosit(String EredetiCim){
+    
+    public void ListaModositbyCim(String EredetiCim){
         for (Book konyv: konyvek)
         {
             if(konyv.getCim().equals(EredetiCim)){
@@ -116,4 +105,29 @@ public class Konyvlista implements  Serializable{
         System.out.println(konyv.getCim());
     }
 }
+    
+    public void ListaModositbyAzonosito(String EredetiAzonosito){
+        for (Book konyv: konyvek)
+        {
+            if(konyv.getAzonosito().equals(EredetiAzonosito)){
+                Scanner scan = new Scanner(System.in);
+                String UjAzonosito= scan.nextLine();
+                konyv.setCim(UjAzonosito);
+            }
+        System.out.println(konyv.getCim());
+    }
+}
+        
+    public void ListaModositbyHozzaferheto(String JelenlegiHozzaf){
+        for (Book konyv: konyvek)
+        {
+            if(!konyv.isHozzaferheto()){
+            } else {
+                Scanner scan = new Scanner(System.in);
+                String UjHozzaf= scan.nextLine();
+                konyv.setHozzaferheto(false);
+            }
+        System.out.println(konyv.getCim());
+    }
+} 
 }
