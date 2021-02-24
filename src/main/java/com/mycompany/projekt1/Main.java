@@ -11,15 +11,21 @@ package com.mycompany.projekt1;
  */
 import lists.Konyvlista;
 import lists.Felhasznalolista;
+import lists.Konyvtaroslista;
 import classes.Felhasznalo;
 import classes.Book;
+import classes.konyvtaros;
 import java.util.ArrayList;
+import classes.ConsoleColors;
+
 
 public class main {
     public static void main(String[] args) {
+  
         
 Konyvlista lista1 = new Konyvlista();
 Felhasznalolista lista2 = new Felhasznalolista();
+Konyvtaroslista lista3 = new Konyvtaroslista();
 
 
 ArrayList<String> targyszavak = new ArrayList<>();
@@ -39,8 +45,11 @@ ArrayList<String> targyszavak = new ArrayList<>();
    Felhasznalo user1= new Felhasznalo("1f","Szalma Szilárd","Balavásár, Str. Principala, Nr. 318 ", "szalma.szilard@student.ms.sapientia.ro",07433241);
    Felhasznalo user2= new Felhasznalo("2f","András Andrea","Gyergyóditró, Str. Gábor Áron, Nr.34 ", "andrea.andras@student.ms.sapientia.ro",07433242);
    Felhasznalo user3= new Felhasznalo("3f","Pál Inka","Szeszvásár, Str. Köményes, Nr.75 ", "nonalcoholist@ms.whiskey.ro",07433241);
+   konyvtaros dolgozo1=new konyvtaros("1d","Könyvmoly Katalin","Marosvásárhely, Fortuna,BL25,Nr.8", "kkatalin@gmail.ro", 075464567,"ilovebooks" );
+   konyvtaros dolgozo2=new konyvtaros("2d","Zokni György","Marosvásárhely, December1,BL14,Nr.2", "lyukaszokni@yahoo.com", 075434507,"oldspice" );
    
    
+
    // lista1.csatolLista(konyv1);
   //  lista1.csatolLista(konyv2);
   //  lista1.csatolLista(konyv3);
@@ -64,9 +73,16 @@ ArrayList<String> targyszavak = new ArrayList<>();
 //lista2.csatolLista(user3);
 //lista2.FelhasznaloListaMentes();
 
-lista2.FelhasznaloListaBetoltesFROMTXT();
-lista2.KiListaz();
-System.out.println("A könyvtár jelenlegi felhasználói: " + lista2.Meret());
+//lista2.FelhasznaloListaBetoltesFROMTXT();
+//lista2.KiListaz();
+//System.out.println("A könyvtár jelenlegi felhasználói: " + lista2.Meret());
+//System.out.println(ConsoleColors.RED + "RED COLORED");
+
+//lista3.csatolLista(dolgozo1);
+//lista3.csatolLista(dolgozo2);
+//lista3.KonyvtaroslistaMentes();
+lista3.KonyvtaroslistaBetoltesFROMTXT();
+lista3.KiListaz();
 
   
     } 

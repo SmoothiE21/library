@@ -9,7 +9,7 @@ package classes;
  *
  * @author Szalma Szilard
  */
-public class konyvtaros {
+public class konyvtaros implements java.io.Serializable {
     public String azonosito;
     public String nev;
     public String cim;
