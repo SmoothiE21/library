@@ -15,7 +15,7 @@ public class konyvtaros implements java.io.Serializable {
     public String cim;
     public String Email;
     public int tel;
-    public String jelszo;
+    private String jelszo;
 
     public void setAzonosito(String azonosito) {
         this.azonosito = azonosito;

@@ -9,37 +9,75 @@ package classes;
  *
  * @author Szalma Szilard
  */
-public class kolcson {
+import java.time.LocalDate;
+public class kolcson implements java.io.Serializable {
     
-    public String kolcsonazon;
-    public String konyvazono;
-    public String felhasznaloazon;
-    public String konyvtarosazon;
+    public String kolcsonAzonosito;
+    public String bookAzonosito;
+    public String felhasznaloAzonosito;
+    public String konyvtarosAzonosito;
+    public LocalDate kolcsonDatum;
+    public LocalDate kolcsonLejarat;
 
-    public String getKolcsonazon() {
-        return kolcsonazon;
+    public String getKolcsonAzonosito() {
+        return kolcsonAzonosito;
     }
 
-    public String getKonyvazono() {
-        return konyvazono;
+    public String getBookAzonosito() {
+        return bookAzonosito;
     }
 
-    public String getFelhasznaloazon() {
-        return felhasznaloazon;
+    public String getFelhasznaloAzonosito() {
+        return felhasznaloAzonosito;
     }
 
-    public String getKonyvtarosazon() {
-        return konyvtarosazon;
+    public String getKonyvtarosAzonosito() {
+        return konyvtarosAzonosito;
     }
+
+    public LocalDate getKolcsonDatum() {
+        return kolcsonDatum;
+    }
+
+    public LocalDate getKolcsonLejarat() {
+        return kolcsonLejarat;
+    }
+
+    public void setKolcsonAzonosito(String kolcsonAzonosito) {
+        this.kolcsonAzonosito = kolcsonAzonosito;
+    }
+
+    public void setBookAzonosito(String bookAzonosito) {
+        this.bookAzonosito = bookAzonosito;
+    }
+
+    public void setFelhasznaloAzonosito(String felhasznaloAzonosito) {
+        this.felhasznaloAzonosito = felhasznaloAzonosito;
+    }
+
+    public void setKonyvtarosAzonosito(String konyvtarosAzonosito) {
+        this.konyvtarosAzonosito = konyvtarosAzonosito;
+    }
+
+    public void setKolcsonDatum(LocalDate kolcsonDatum) {
+        this.kolcsonDatum = kolcsonDatum;
+    }
+
+    public void setKolcsonLejarat(LocalDate kolcsonLejarat) {
+        this.kolcsonLejarat = kolcsonLejarat;
+    }
+
+
     
           
     
-    public kolcson(String kolcsonazon, String konyvazon, String felhasznaloazon, String konyvtarosazon){
-        this.felhasznaloazon= felhasznaloazon;
-        this.konyvazono= konyvazon;
-        this.kolcsonazon=kolcsonazon;
-        this.konyvtarosazon=konyvtarosazon;
-        
+    public kolcson(String kolcsonAzonosito, String bookAzonosito, String felhasznaloAzonosito, String konyvtarosAzonosito, LocalDate kolcsonDatum, LocalDate kolcsonLejarat){
+        this.kolcsonAzonosito=kolcsonAzonosito;
+        this.bookAzonosito=bookAzonosito;
+        this.felhasznaloAzonosito=felhasznaloAzonosito;
+        this.konyvtarosAzonosito=konyvtarosAzonosito;
+        this.kolcsonDatum=kolcsonDatum;
+        this.kolcsonLejarat=kolcsonLejarat;
     }
     
 }
