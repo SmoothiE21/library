@@ -20,6 +20,7 @@ import classes.kolcson;
 import java.util.ArrayList;
 import classes.ConsoleColors;
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class main {
     public static void main(String[] args) {
@@ -50,7 +51,15 @@ ArrayList<String> targyszavak = new ArrayList<>();
    Felhasznalo user3= new Felhasznalo("3f","Pál Inka","Szeszvásár, Str. Köményes, Nr.75 ", "nonalcoholist@ms.whiskey.ro",07433241);
    konyvtaros dolgozo1=new konyvtaros("1d","Könyvmoly Katalin","Marosvásárhely, Fortuna,BL25,Nr.8", "kkatalin@gmail.ro", 075464567,"ilovebooks" );
    konyvtaros dolgozo2=new konyvtaros("2d","Zokni György","Marosvásárhely, December1,BL14,Nr.2", "lyukaszokni@yahoo.com", 075434507,"oldspice" );
-   kolcson kolcsonzes1= new kolcson("1e","1k","1f","1d",LocalDate.of(2017, 1, 13),LocalDate.of(2017, 1, 27));
+  // Scanner scan = new Scanner(System.in);
+    //  System.out.println("Kölcsönzés........."+'\n');
+      //System.out.println("Kérem adja meg a könyv azonositóját: "+'\n');
+   //String a=scan.nextLine();
+     // System.out.println("Kérem adja meg a felhasználó azonositóját: "+'\n');
+   //String b=scan.nextLine();
+     // System.out.println("Kérem adja meg a saját azonositóját: "+'\n');
+   //String c=scan.nextLine();
+  //kolcson kolcsonzes1= new kolcson("1e",a,b,c,LocalDate.of(2017, 1, 13),LocalDate.of(2017, 1, 27));
    
    
 
@@ -89,10 +98,15 @@ ArrayList<String> targyszavak = new ArrayList<>();
 //lista3.KiListaz();
 
 //lista4.csatolLista(kolcsonzes1);
-//lista4.KolcsonMentes()
+//lista4.KolcsonMentes();
 lista4.KolcsonListaBetoltesFROMTXT();
 lista4.KiListaz();
 System.out.println("Kölcsönök száma: "+lista4.KolcsonokSzama());
+
+
+
+
+
 
 
   
