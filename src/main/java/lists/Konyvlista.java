@@ -17,6 +17,21 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import java.io.File;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+ 
+import org.w3c.dom.Attr;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+
 /**
  *
  * @author Szalma Szilard
@@ -117,5 +132,51 @@ public class Konyvlista implements  Serializable{
         System.out.println(konyv.getAzonosito());
     }
 }
-
+    
+     public void konyvListaToXML(){
+        try{
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            
+        Document doc = docBuilder.newDocument();
+        Element rootElement = doc.createElement("Books");
+        doc.appendChild(rootElement);
+        
+        for(Book kk : konyvek){
+       	    Element book = doc.createElement("Book");
+            rootElement.appendChild(book);
+            book.setAttribute("Azonositó", kk.getAzonosito());
+            
+            Element cim = doc.createElement("Cim");
+            cim.appendChild(doc.createTextNode(kk.getCim()));
+            book.appendChild(cim);
+            
+            Element iro = doc.createElement("Iró");
+            iro.appendChild(doc.createTextNode(kk.getIro()));
+            book.appendChild(iro);
+            
+            
+            Element kiado = doc.createElement("Kiado");
+            kiado.appendChild(doc.createTextNode(kk.getKiado()));
+            book.appendChild(kiado);
+            
+            Element kiadasEve = doc.createElement("KiadásEve");
+            Integer i = kk.getKiadas_eve();
+            kiadasEve.appendChild(doc.createTextNode(i.toString()));
+            book.appendChild(kiadasEve);
+        }
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            StreamResult result = new StreamResult(new File("books.xml"));
+            
+            transformer.transform(source, result);
+ 
+            System.out.println("File saved!");
+         
+    }catch(ParserConfigurationException | TransformerException | DOMException e){
+    }
+        
+    }
+   
 }
