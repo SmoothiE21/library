@@ -18,6 +18,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import java.io.File;
+import java.io.IOException;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -31,6 +32,9 @@ import org.w3c.dom.Attr;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -76,14 +80,10 @@ public class Konyvlista implements  Serializable{
     public Boolean KonyvlistaMentes(){
         String filename = "konyvek.txt";
         try{
-            FileOutputStream file = new FileOutputStream(filename);
-            ObjectOutputStream out = new ObjectOutputStream(file);
-            out.writeObject(konyvek);
-            out.close();
-            file.close();
-        }catch(Exception e){
-            e.printStackTrace();
-            
+            try (FileOutputStream file = new FileOutputStream(filename); ObjectOutputStream out = new ObjectOutputStream(file)) {
+                out.writeObject(konyvek);
+            }
+        }catch(IOException e){
         }
         return false;
     }
@@ -94,13 +94,11 @@ public class Konyvlista implements  Serializable{
             FileInputStream file = new FileInputStream(filename);
             ObjectInputStream out2 = new ObjectInputStream(file);
    
-            List<Book> uj_Lista = new ArrayList<Book>();
+            List<Book> uj_Lista = new ArrayList<>();
             uj_Lista = (List<Book>) out2.readObject();
             konyvek = uj_Lista;
             return uj_Lista;
-        }catch(Exception e){
-            e.printStackTrace();
-            
+        }catch(IOException | ClassNotFoundException e){
         }
         return null;
     }
@@ -133,7 +131,7 @@ public class Konyvlista implements  Serializable{
     }
 }
     
-     public void konyvListaToXML(){
+    public void konyvListaToXML(){
         try{
         DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
@@ -164,11 +162,19 @@ public class Konyvlista implements  Serializable{
             Integer i = kk.getKiadas_eve();
             kiadasEve.appendChild(doc.createTextNode(i.toString()));
             book.appendChild(kiadasEve);
+            
+             Element hozzaferheto = doc.createElement("Hozzáférhető");
+             Boolean h =kk.isHozzaferheto();
+            hozzaferheto.appendChild(doc.createTextNode(h.toString()));
+            book.appendChild(hozzaferheto);
+            
+            
+
         }
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
             DOMSource source = new DOMSource(doc);
-            StreamResult result = new StreamResult(new File("books.xml"));
+            StreamResult result = new StreamResult(new File("booklist.xml"));
             
             transformer.transform(source, result);
  
@@ -178,5 +184,43 @@ public class Konyvlista implements  Serializable{
     }
         
     }
+     
+    public Boolean konyvListaBetoltesXML(){
+        try{
+             File fXmlFile = new File("booklist.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+
+	
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName("Book");
+            
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+                Node nNode = nList.item(temp);
+
+                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element eElement = (Element) nNode;
+
+                    System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
+                    System.out.println("Cim : " + eElement.getElementsByTagName("Cim").item(0).getTextContent());
+                    System.out.println("Iró : " + eElement.getElementsByTagName("Iró").item(0).getTextContent());
+                    System.out.println("Kiadó: " + eElement.getElementsByTagName("Kiado").item(0).getTextContent());
+                    System.out.println("Kiadás Éve : " + eElement.getElementsByTagName("KiadásEve").item(0).getTextContent());
+                    System.out.println("Hozzáférhető : " + eElement.getElementsByTagName("Hozzáférhető").item(0).getTextContent());
+                    
+                }
+            }
+            return true;
+        }catch(IOException | ParserConfigurationException | DOMException | SAXException e){
+        }
+        return false;
+    }   
    
 }
