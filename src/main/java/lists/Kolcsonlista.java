@@ -30,6 +30,7 @@ import java.time.LocalDate;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import java.sql.Date;
 
 
 /**
@@ -128,15 +129,15 @@ public class Kolcsonlista implements  Serializable {
             librarianazon.appendChild(doc.createTextNode(xx.getKonyvtarosAzonosito()));
             kolcson.appendChild(librarianazon);
             
-//            Element datum = doc.createElement("KölcsönDátum");
-//            Local Date dat = xx.getKolcsonDatum();
-//            datum.appendChild(doc.createTextNode(dat.toString()));
-//            kolcson.appendChild(datum);
-//            
-//             Element datumle = doc.createElement("KölcsönLejárta");
-//            Local Date datt = xx.getKolcsonLejarat();
-//            datumle.appendChild(doc.createTextNode(datt.toString()));
-//            kolcson.appendChild(datumle);
+            Element datum = doc.createElement("KölcsönDátum");
+            LocalDate dat = xx.getKolcsonDatum();
+            datum.appendChild(doc.createTextNode(dat.toString()));
+            kolcson.appendChild(datum);
+           
+             Element datumle = doc.createElement("KölcsönLejárta");
+            LocalDate datt = xx.getKolcsonLejarat();
+            datumle.appendChild(doc.createTextNode(datt.toString()));
+            kolcson.appendChild(datumle);
             
             
 
@@ -184,8 +185,8 @@ public class Kolcsonlista implements  Serializable {
                     System.out.println("Könyvazonositó : " + eElement.getElementsByTagName("Könyvazonositó").item(0).getTextContent());
                     System.out.println("Felhasználóazonositó : " + eElement.getElementsByTagName("Felhasználóazonositó").item(0).getTextContent());
                     System.out.println("Könyvtárosazonositó: " + eElement.getElementsByTagName("Könyvtárosazonositó").item(0).getTextContent());
-                  //  System.out.println("KölcsönDátum : " + eElement.getElementsByTagName("KölcsönDátum").item(0).getTextContent());
-                  //  System.out.println("KölcsönLejárta : " + eElement.getElementsByTagName("KölcsönLejárta").item(0).getTextContent());    
+                    System.out.println("KölcsönDátum : " + eElement.getElementsByTagName("KölcsönDátum").item(0).getTextContent());
+                    System.out.println("KölcsönLejárta : " + eElement.getElementsByTagName("KölcsönLejárta").item(0).getTextContent());    
                 }
             }
             return true;

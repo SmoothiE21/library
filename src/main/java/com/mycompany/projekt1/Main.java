@@ -80,9 +80,9 @@ ArrayList<String> targyszavak = new ArrayList<>();
 
 
 
-lista2.csatolLista(user1);
-lista2.csatolLista(user2);
-lista2.csatolLista(user3);
+//lista2.csatolLista(user1);
+//lista2.csatolLista(user2);
+//lista2.csatolLista(user3);
 //lista2.FelhasznaloListaMentes();
 
 //lista2.FelhasznaloListaBetoltesFROMTXT();
@@ -120,8 +120,9 @@ lista2.csatolLista(user3);
 
 //lista3.konyvtarosListaBetoltesXML();
 
-lista4.KolcsonListaBetoltesFROMTXT();
-lista4.kolcsonListaToXML();
+//lista4.KolcsonListaBetoltesFROMTXT();
+//lista4.kolcsonListaToXML();
+lista4.kolcsonListaBetoltesXML();
 
 
 
