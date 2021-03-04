@@ -111,7 +111,7 @@ ArrayList<String> targyszavak = new ArrayList<>();
 //System.out.println(lista1.Meret());
 //lista1.KiListaz();
 //lista1.KonyvlistaMentes();
-lista1.konyvListaToXML();
+//lista1.konyvListaToXML();
 lista1.konyvListaBetoltesXML();
 
 

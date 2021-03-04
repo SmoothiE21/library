@@ -163,10 +163,15 @@ public class Konyvlista implements  Serializable{
             kiadasEve.appendChild(doc.createTextNode(i.toString()));
             book.appendChild(kiadasEve);
             
-             Element hozzaferheto = doc.createElement("Hozzáférhető");
+             Element hozzaferheto = doc.createElement("Hozzáférheto");
              Boolean h =kk.isHozzaferheto();
             hozzaferheto.appendChild(doc.createTextNode(h.toString()));
             book.appendChild(hozzaferheto);
+            
+            Element Targyszavak = doc.createElement("Tárgyszavak");
+            Targyszavak.appendChild(doc.createTextNode(String.valueOf(
+                    kk.getTargyszavak())));
+            book.appendChild(Targyszavak);
             
             
 
@@ -213,8 +218,8 @@ public class Konyvlista implements  Serializable{
                     System.out.println("Iró : " + eElement.getElementsByTagName("Iró").item(0).getTextContent());
                     System.out.println("Kiadó: " + eElement.getElementsByTagName("Kiado").item(0).getTextContent());
                     System.out.println("Kiadás Éve : " + eElement.getElementsByTagName("KiadásEve").item(0).getTextContent());
-                    System.out.println("Hozzáférhető : " + eElement.getElementsByTagName("Hozzáférhető").item(0).getTextContent());
-                    
+                    System.out.println("Hozzáférheto : " + eElement.getElementsByTagName("Hozzáférheto").item(0).getTextContent());   
+                    System.out.println("Tárgyszavak : " + eElement.getElementsByTagName("Tárgyszavak").item(0).getTextContent());  
                 }
             }
             return true;
