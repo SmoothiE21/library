@@ -63,16 +63,16 @@ ArrayList<String> targyszavak = new ArrayList<>();
    
    
 
-    lista1.csatolLista(konyv1);
-    lista1.csatolLista(konyv2);
-    lista1.csatolLista(konyv3);
-    lista1.csatolLista(konyv4);
-    lista1.csatolLista(konyv5);
-    lista1.csatolLista(konyv6);
-    lista1.csatolLista(konyv7);
-    lista1.csatolLista(konyv8);
-    lista1.csatolLista(konyv9);
-    lista1.csatolLista(konyv10);
+//    lista1.csatolLista(konyv1);
+//    lista1.csatolLista(konyv2);
+//    lista1.csatolLista(konyv3);
+//    lista1.csatolLista(konyv4);
+//    lista1.csatolLista(konyv5);
+//    lista1.csatolLista(konyv6);
+//    lista1.csatolLista(konyv7);
+//    lista1.csatolLista(konyv8);
+//    lista1.csatolLista(konyv9);
+//    lista1.csatolLista(konyv10);
  
  // lista1.konyvlistaBetoltesFROMTXT();
  // lista1.KiListaz();
@@ -80,9 +80,9 @@ ArrayList<String> targyszavak = new ArrayList<>();
 
 
 
-//lista2.csatolLista(user1);
-//lista2.csatolLista(user2);
-//lista2.csatolLista(user3);
+lista2.csatolLista(user1);
+lista2.csatolLista(user2);
+lista2.csatolLista(user3);
 //lista2.FelhasznaloListaMentes();
 
 //lista2.FelhasznaloListaBetoltesFROMTXT();
@@ -112,10 +112,16 @@ ArrayList<String> targyszavak = new ArrayList<>();
 //lista1.KiListaz();
 //lista1.KonyvlistaMentes();
 //lista1.konyvListaToXML();
-lista1.konyvListaBetoltesXML();
+//lista1.konyvListaBetoltesXML();
 
+//lista2.felhasznaloListaToXML();
+//lista2.felhasznaloListaBetoltesXML();
+//lista3.konyvtarosListaToXML();
 
+//lista3.konyvtarosListaBetoltesXML();
 
+lista4.KolcsonListaBetoltesFROMTXT();
+lista4.kolcsonListaToXML();
 
 
 

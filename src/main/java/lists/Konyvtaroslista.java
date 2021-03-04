@@ -5,14 +5,31 @@
  */
 package lists;
 
+import classes.Felhasznalo;
 import classes.konyvtaros;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 /**
  *
@@ -111,5 +128,97 @@ public class Konyvtaroslista {
             }
         System.out.println(alkalmazott.getAzonosito());
     }
-}  
+} 
+    
+    public void konyvtarosListaToXML(){
+        try{
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            
+        Document doc = docBuilder.newDocument();
+        Element rootElement = doc.createElement("Librarians");
+        doc.appendChild(rootElement);
+        
+        for(konyvtaros bb : konyvtaroslist){
+       	    Element librarian = doc.createElement("Librarian");
+            rootElement.appendChild(librarian);
+            librarian.setAttribute("Azonositó", bb.getAzonosito());
+            
+            Element nev = doc.createElement("Név");
+            nev.appendChild(doc.createTextNode(bb.getNev()));
+            librarian.appendChild(nev);
+            
+            Element cim = doc.createElement("Cim");
+            cim.appendChild(doc.createTextNode(bb.getCim()));
+            librarian.appendChild(cim);
+            
+            
+            Element email = doc.createElement("Email");
+            email.appendChild(doc.createTextNode(bb.getEmail()));
+            librarian.appendChild(email);
+            
+            Element tel = doc.createElement("Tel");
+            Integer i = bb.getTel();
+            tel.appendChild(doc.createTextNode(i.toString()));
+            librarian.appendChild(tel);
+            
+            Element pw = doc.createElement("Jelszó");
+            pw.appendChild(doc.createTextNode(bb.getJelszo()));
+            librarian.appendChild(pw);
+            
+
+            
+
+        }
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            var result = new StreamResult(new File("librarianlist.xml"));
+            
+            transformer.transform(source, result);
+ 
+            System.out.println("File saved!");
+         
+    }catch(ParserConfigurationException | TransformerException | DOMException e){
+    }
+        
+    }
+    
+    public Boolean konyvtarosListaBetoltesXML(){
+        try{
+             File fXmlFile = new File("librarianlist.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+
+	
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName("Librarian");
+            
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+                Node nNode = nList.item(temp);
+
+                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element eElement = (Element) nNode;
+
+                    System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
+                    System.out.println("Név: " + eElement.getElementsByTagName("Név").item(0).getTextContent());
+                    System.out.println("Cim : " + eElement.getElementsByTagName("Cim").item(0).getTextContent());
+                    System.out.println("Email: " + eElement.getElementsByTagName("Email").item(0).getTextContent());
+                    System.out.println("Tel : " + eElement.getElementsByTagName("Tel").item(0).getTextContent());
+                    System.out.println("Jelszó : " + eElement.getElementsByTagName("Jelszó").item(0).getTextContent());
+                }
+            }
+            return true;
+        }catch(IOException | ParserConfigurationException | DOMException | SAXException e){
+        }
+        return false;
+    }   
 }
+

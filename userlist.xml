@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Users>
+<User Azonositó="1f">
+<Név>Szalma Szilárd</Név>
+<Cim>Balavásár, Str. Principala, Nr. 318 </Cim>
+<Email>szalma.szilard@student.ms.sapientia.ro</Email>
+<Tel>1980065</Tel>
+</User>
+
+<User Azonositó="2f">
+<Név>András Andrea</Név>
+<Cim>Gyergyóditró, Str. Gábor Áron, Nr.34 </Cim>
+<Email>andrea.andras@student.ms.sapientia.ro</Email>
+<Tel>1980066</Tel>
+</User>
+
+<User Azonositó="3f"
+><Név>Pál Inka</Név>
+<Cim>Szeszvásár, Str. Köményes, Nr.75 </Cim>
+<Email>nonalcoholist@ms.whiskey.ro</Email>
+<Tel>1980065</Tel>
+</User>
+</Users>

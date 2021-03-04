@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Librarians>
+<Librarian Azonositó="1d">
+<Név>Könyvmoly Katalin</Név>
+<Cim>Marosvásárhely, Fortuna,BL25,Nr.8</Cim>
+<Email>kkatalin@gmail.ro</Email>
+<Tel>16148855</Tel>
+<Jelszó>ilovebooks</Jelszó>
+</Librarian>
+
+<Librarian Azonositó="2d">
+<Név>Zokni György</Név>
+<Cim>Marosvásárhely, December1,BL14,Nr.2</Cim>
+<Email>lyukaszokni@yahoo.com</Email>
+<Tel>16136519</Tel>
+<Jelszó>oldspice</Jelszó>
+</Librarian>
+</Librarians>

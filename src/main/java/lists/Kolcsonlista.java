@@ -5,13 +5,31 @@
  */
 package lists;
 import classes.kolcson;
+import classes.konyvtaros;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.Transformer;
+import javax.xml.transform.TransformerException;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import java.time.LocalDate;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 
 /**
@@ -82,5 +100,98 @@ public class Kolcsonlista implements  Serializable {
     public int KolcsonokSzama(){
         return kolcsonlist.size();
     }
+    
+    public void kolcsonListaToXML(){
+        try{
+        DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+            
+        Document doc = docBuilder.newDocument();
+        Element rootElement = doc.createElement("Kölcsönök");
+        doc.appendChild(rootElement);
+        
+        for(kolcson xx : kolcsonlist){
+       	    Element kolcson = doc.createElement("Kölcsön");
+            rootElement.appendChild(kolcson);
+            kolcson.setAttribute("Azonositó", xx.getKolcsonAzonosito());
+            
+            Element bookazon = doc.createElement("Könyvazonositó");
+            bookazon.appendChild(doc.createTextNode(xx.getBookAzonosito()));
+            kolcson.appendChild(bookazon);
+            
+            Element userazon = doc.createElement("Felhasználóazonositó");
+            userazon.appendChild(doc.createTextNode(xx.getFelhasznaloAzonosito()));
+            kolcson.appendChild(userazon);
+            
+            
+            Element librarianazon = doc.createElement("Könyvtárosazonositó");
+            librarianazon.appendChild(doc.createTextNode(xx.getKonyvtarosAzonosito()));
+            kolcson.appendChild(librarianazon);
+            
+//            Element datum = doc.createElement("KölcsönDátum");
+//            Local Date dat = xx.getKolcsonDatum();
+//            datum.appendChild(doc.createTextNode(dat.toString()));
+//            kolcson.appendChild(datum);
+//            
+//             Element datumle = doc.createElement("KölcsönLejárta");
+//            Local Date datt = xx.getKolcsonLejarat();
+//            datumle.appendChild(doc.createTextNode(datt.toString()));
+//            kolcson.appendChild(datumle);
+            
+            
+
+            
+
+        }
+            TransformerFactory transformerFactory = TransformerFactory.newInstance();
+            Transformer transformer = transformerFactory.newTransformer();
+            DOMSource source = new DOMSource(doc);
+            var result = new StreamResult(new File("kolcsonlist.xml"));
+            
+            transformer.transform(source, result);
+ 
+            System.out.println("File saved!");
+         
+    }catch(ParserConfigurationException | TransformerException | DOMException e){
+    }
+        
+    }
+    
+     public Boolean kolcsonListaBetoltesXML(){
+        try{
+             File fXmlFile = new File("kolcsonlist.xml");
+            DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+            DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+            Document doc = dBuilder.parse(fXmlFile);
+
+	
+            doc.getDocumentElement().normalize();
+
+            System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
+            NodeList nList = doc.getElementsByTagName("Kölcsön");
+            
+            for (int temp = 0; temp < nList.getLength(); temp++) {
+
+                Node nNode = nList.item(temp);
+
+                System.out.println("\nCurrent Element :" + nNode.getNodeName());
+
+                if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+
+                    Element eElement = (Element) nNode;
+
+                    System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
+                    System.out.println("Könyvazonositó : " + eElement.getElementsByTagName("Könyvazonositó").item(0).getTextContent());
+                    System.out.println("Felhasználóazonositó : " + eElement.getElementsByTagName("Felhasználóazonositó").item(0).getTextContent());
+                    System.out.println("Könyvtárosazonositó: " + eElement.getElementsByTagName("Könyvtárosazonositó").item(0).getTextContent());
+                  //  System.out.println("KölcsönDátum : " + eElement.getElementsByTagName("KölcsönDátum").item(0).getTextContent());
+                  //  System.out.println("KölcsönLejárta : " + eElement.getElementsByTagName("KölcsönLejárta").item(0).getTextContent());    
+                }
+            }
+            return true;
+        }catch(IOException | ParserConfigurationException | DOMException | SAXException e){
+        }
+        return false;
+    }   
         
 }
