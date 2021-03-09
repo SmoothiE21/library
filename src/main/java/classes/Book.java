@@ -34,6 +34,9 @@ public class Book implements java.io.Serializable {
         this.targyszavak = targyszavak;
         this.hozzaferheto = hozzaferheto;
     } 
+
+    public Book() {
+    }
     
  
 

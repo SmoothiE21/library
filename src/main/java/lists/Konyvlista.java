@@ -19,6 +19,7 @@ import java.util.Scanner;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -202,6 +203,7 @@ public class Konyvlista implements  Serializable{
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("Book");
+            konyvek.clear();
             
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
@@ -213,13 +215,26 @@ public class Konyvlista implements  Serializable{
 
                     Element eElement = (Element) nNode;
 
-                    System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
-                    System.out.println("Cim : " + eElement.getElementsByTagName("Cim").item(0).getTextContent());
-                    System.out.println("Iró : " + eElement.getElementsByTagName("Iró").item(0).getTextContent());
-                    System.out.println("Kiadó: " + eElement.getElementsByTagName("Kiado").item(0).getTextContent());
-                    System.out.println("Kiadás Éve : " + eElement.getElementsByTagName("KiadásEve").item(0).getTextContent());
-                    System.out.println("Hozzáférheto : " + eElement.getElementsByTagName("Hozzáférheto").item(0).getTextContent());   
-                    System.out.println("Tárgyszavak : " + eElement.getElementsByTagName("Tárgyszavak").item(0).getTextContent());  
+                            Book konyv = new Book();
+                            konyv.setAzonosito(eElement.getAttribute("Azonositó"));
+                            konyv.setCim(eElement.getElementsByTagName("Cim").item(0).getTextContent());
+                            konyv.setIro(eElement.getElementsByTagName("Iró").item(0).getTextContent());
+                            konyv.setKiado(eElement.getElementsByTagName("Kiado").item(0).getTextContent());
+                            konyv.setKiadas_eve(Integer.parseInt(eElement.getElementsByTagName("KiadásEve").item(0).getTextContent()));
+                            konyv.setHozzaferheto(Boolean.parseBoolean(eElement.getElementsByTagName("Hozzáférheto").item(0).getTextContent()));
+                            ArrayList<String> newList = new ArrayList<String>(Arrays.asList(eElement.getElementsByTagName("Tárgyszavak").item(0).getTextContent().split(",")));
+                            konyv.setTargyszavak(newList);
+                         
+                            konyvek.add(konyv);
+
+                    System.out.println("Azonosito:" + eElement.getAttribute("Azonositó"));
+                    System.out.println("Cim:" + eElement.getElementsByTagName("Cim").item(0).getTextContent());
+                    System.out.println("Iró:" + eElement.getElementsByTagName("Iró").item(0).getTextContent());
+                    System.out.println("Kiadó:" + eElement.getElementsByTagName("Kiado").item(0).getTextContent());
+                    System.out.println("Kiadás éve:" + eElement.getElementsByTagName("KiadásEve").item(0).getTextContent());
+                    System.out.println("Tárgyszavak:" + eElement.getElementsByTagName("Tárgyszavak").item(0).getTextContent());
+                    System.out.println("Hozzáférhető:" + eElement.getElementsByTagName("Hozzáférheto").item(0).getTextContent());
+              
                 }
             }
             return true;
