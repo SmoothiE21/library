@@ -5,6 +5,7 @@
  */
 package lists;
 
+import classes.Book;
 import classes.Felhasznalo;
 import classes.konyvtaros;
 import java.io.File;
@@ -14,6 +15,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import javax.xml.parsers.DocumentBuilder;
@@ -196,6 +198,7 @@ public class Konyvtaroslista {
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("Librarian");
+            konyvtaroslist.clear();
             
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
@@ -206,6 +209,18 @@ public class Konyvtaroslista {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
                     Element eElement = (Element) nNode;
+                    
+                    konyvtaros librarians = new konyvtaros();
+                            librarians.setAzonosito(eElement.getAttribute("Azonositó"));
+                            librarians.setNev(eElement.getElementsByTagName("Név").item(0).getTextContent());
+                            librarians.setCim(eElement.getElementsByTagName("Cim").item(0).getTextContent());
+                            librarians.setEmail(eElement.getElementsByTagName("Email").item(0).getTextContent());
+                            librarians.setTel(Integer.parseInt(eElement.getElementsByTagName("Tel").item(0).getTextContent()));
+                             librarians.setJelszo(eElement.getElementsByTagName("Jelszó").item(0).getTextContent());
+
+
+                         
+                            konyvtaroslist.add(librarians);
 
                     System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
                     System.out.println("Név: " + eElement.getElementsByTagName("Név").item(0).getTextContent());

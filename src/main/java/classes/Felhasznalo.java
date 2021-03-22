@@ -57,11 +57,15 @@ public class Felhasznalo implements java.io.Serializable  {
     public int getTel() {
         return tel;
     }
+    
     public Felhasznalo(String azonosito, String nev, String cim, String email, int tel) {
         this.azonosito = azonosito;
         this.nev = nev;
         this.cim = cim;
         this.email = email;
         this.tel = tel;
+    }
+    
+        public Felhasznalo() {
     }
 }

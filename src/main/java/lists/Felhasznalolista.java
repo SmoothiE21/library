@@ -10,6 +10,7 @@ package lists;
  * @author Szalma Szilard
  */
 
+import classes.Book;
 import classes.Felhasznalo;
 import java.io.File;
 import java.io.FileInputStream;
@@ -19,6 +20,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import javax.xml.parsers.DocumentBuilder;
@@ -191,6 +193,7 @@ public class Felhasznalolista implements Serializable{
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("User");
+            userlist.clear();
             
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
@@ -201,6 +204,16 @@ public class Felhasznalolista implements Serializable{
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
                     Element eElement = (Element) nNode;
+                    
+                    Felhasznalo userss = new Felhasznalo();
+                            userss.setAzonosito(eElement.getAttribute("Azonositó"));
+                            userss.setNev(eElement.getElementsByTagName("Név").item(0).getTextContent());
+                            userss.setCim(eElement.getElementsByTagName("Cim").item(0).getTextContent());
+                            userss.setEmail(eElement.getElementsByTagName("Email").item(0).getTextContent());
+                            userss.setTel(Integer.parseInt(eElement.getElementsByTagName("Tel").item(0).getTextContent()));
+
+                         
+                            userlist.add(userss);
 
                     System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
                     System.out.println("Név: " + eElement.getElementsByTagName("Név").item(0).getTextContent());

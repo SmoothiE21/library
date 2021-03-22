@@ -122,10 +122,11 @@ ArrayList<String> targyszavak = new ArrayList<>();
 
 //lista4.KolcsonListaBetoltesFROMTXT();
 //lista4.kolcsonListaToXML();
-lista1.konyvListaBetoltesXML();
+//lista1.konyvListaBetoltesXML();
 //lista4.kolcsonListaBetoltesXML();
-
-
+//lista2.felhasznaloListaBetoltesXML();
+lista3.konyvtarosListaBetoltesXML();
+//lista4.kolcsonListaBetoltesXML();
 
     } 
 }

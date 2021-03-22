@@ -79,5 +79,8 @@ public class kolcson implements java.io.Serializable {
         this.kolcsonDatum=kolcsonDatum;
         this.kolcsonLejarat=kolcsonLejarat;
     }
+    public kolcson(){
+        
+    }
     
 }

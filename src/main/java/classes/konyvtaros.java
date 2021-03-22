@@ -74,4 +74,7 @@ public class konyvtaros implements java.io.Serializable {
         this.tel=tel;
         this.jelszo=jelszo;
     }
+    public konyvtaros(){
+        
+    }
 }

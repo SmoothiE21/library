@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package lists;
+import classes.Book;
 import classes.kolcson;
 import classes.konyvtaros;
 import java.io.File;
@@ -31,6 +32,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 import java.sql.Date;
+import java.util.Arrays;
 
 
 /**
@@ -170,7 +172,7 @@ public class Kolcsonlista implements  Serializable {
 
             System.out.println("Root element :" + doc.getDocumentElement().getNodeName());
             NodeList nList = doc.getElementsByTagName("Kölcsön");
-            
+            kolcsonlist.clear();
             for (int temp = 0; temp < nList.getLength(); temp++) {
 
                 Node nNode = nList.item(temp);
@@ -180,6 +182,17 @@ public class Kolcsonlista implements  Serializable {
                 if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 
                     Element eElement = (Element) nNode;
+                    
+                    kolcson kolcsonok = new kolcson();
+                            kolcsonok.setKolcsonAzonosito(eElement.getAttribute("Azonositó"));
+                            kolcsonok.setBookAzonosito(eElement.getElementsByTagName("Könyvazonositó").item(0).getTextContent());
+                            kolcsonok.setFelhasznaloAzonosito(eElement.getElementsByTagName("Felhasználóazonositó").item(0).getTextContent());
+                            kolcsonok.setKonyvtarosAzonosito(eElement.getElementsByTagName("Könyvtárosazonositó").item(0).getTextContent());
+                            kolcsonok.setKolcsonDatum(LocalDate.parse(eElement.getElementsByTagName("KölcsönDátum").item(0).getTextContent()));      
+                            kolcsonok.setKolcsonLejarat(LocalDate.parse(eElement.getElementsByTagName("KölcsönLejárta").item(0).getTextContent()));
+
+                         
+                            kolcsonlist.add(kolcsonok);
 
                     System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
                     System.out.println("Könyvazonositó : " + eElement.getElementsByTagName("Könyvazonositó").item(0).getTextContent());
