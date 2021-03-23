@@ -65,16 +65,18 @@ ArrayList<String> targyszavak = new ArrayList<>();
    
    
 
-  //  lista1.csatolLista(konyv1);
-  //  lista1.csatolLista(konyv2);
- //  lista1.csatolLista(konyv3);
- //   lista1.csatolLista(konyv4);
-  //  lista1.csatolLista(konyv5);
-  //  lista1.csatolLista(konyv6);
-  //  lista1.csatolLista(konyv7);
-  //  lista1.csatolLista(konyv8);
-  // lista1.csatolLista(konyv9);
- //   lista1.csatolLista(konyv10);
+//    lista1.csatolLista(konyv1);
+//    lista1.csatolLista(konyv2);
+//   lista1.csatolLista(konyv3);
+//    lista1.csatolLista(konyv4);
+//    lista1.csatolLista(konyv5);
+//    lista1.csatolLista(konyv6);
+//    lista1.csatolLista(konyv7);
+//    lista1.csatolLista(konyv8);
+//   lista1.csatolLista(konyv9);
+//    lista1.csatolLista(konyv10);
+//    lista1.KonyvlistaMentes();
+//    lista1.konyvListaToXML();
  
  // lista1.konyvlistaBetoltesFROMTXT();
  // lista1.KiListaz();

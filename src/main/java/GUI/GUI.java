@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import classes.ConsoleColors;
 import java.time.LocalDate;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -339,50 +340,52 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         lista1.konyvlistaBetoltesFROMTXT();
         lista1.KiListaz();
-        System.out.println("betöltés TXT-böl sikeres");
+        JOptionPane.showMessageDialog(this,"Books loaded successfully(TXT)");
     }//GEN-LAST:event_ImportBookTXTActionPerformed
 
     private void ExportBooksTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportBooksTXTActionPerformed
         // TODO add your handling code here:
         lista1.KonyvlistaMentes();
-         System.out.println("exportálás TXT-be sikeres");
+        JOptionPane.showMessageDialog(this,"Books saved successfully(TXT)");
     }//GEN-LAST:event_ExportBooksTXTActionPerformed
 
     private void ImportBooksXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportBooksXMLActionPerformed
         // TODO add your handling code here:
         lista1.konyvListaBetoltesXML();
         lista1.KiListaz();
-        System.out.println("betöltés XML-ből sikeres");
+        JOptionPane.showMessageDialog(this,"Books loaded successfully(XML)");
     }//GEN-LAST:event_ImportBooksXMLActionPerformed
 
     private void ExportBooksXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportBooksXMLActionPerformed
         // TODO add your handling code here:
         lista1.konyvListaToXML();
-         System.out.println("exportálás XML-be sikeres");
+        JOptionPane.showMessageDialog(this,"Books saved successfully(XML)");
     }//GEN-LAST:event_ExportBooksXMLActionPerformed
 
     private void ImportUsersTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportUsersTXTActionPerformed
         // TODO add your handling code here:
         lista2.FelhasznaloListaBetoltesFROMTXT();
-        System.out.println("importálás TXT-böl sikeres");
         lista2.KiListaz();
+        JOptionPane.showMessageDialog(this,"Users loaded successfully(TXT)");
     }//GEN-LAST:event_ImportUsersTXTActionPerformed
 
     private void ExportUsersTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportUsersTXTActionPerformed
         // TODO add your handling code here:
         lista2.FelhasznaloListaMentes();
-         System.out.println("exportálás TXT-be sikeres");
+        JOptionPane.showMessageDialog(this,"Users saved successfully(TXT)");
     }//GEN-LAST:event_ExportUsersTXTActionPerformed
 
     private void ImportUsersXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportUsersXMLActionPerformed
         // TODO add your handling code here:
         lista2.felhasznaloListaBetoltesXML();
         lista2.KiListaz();
+        JOptionPane.showMessageDialog(this,"Users loaded successfully(XML)");
     }//GEN-LAST:event_ImportUsersXMLActionPerformed
 
     private void ExportUsersXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportUsersXMLActionPerformed
         // TODO add your handling code here:
         lista2.felhasznaloListaToXML();
+        JOptionPane.showMessageDialog(this,"Users saved successfully(XML)");
     }//GEN-LAST:event_ExportUsersXMLActionPerformed
 
     private void FileMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileMenuActionPerformed
@@ -393,25 +396,27 @@ public class GUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         lista3.KolcsonListaBetoltesFROMTXT();
         lista3.KiListaz();
+        JOptionPane.showMessageDialog(this,"Ioans loaded successfully(TXT)");
         
     }//GEN-LAST:event_ImportIoansTXTActionPerformed
 
     private void ExportIoansTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportIoansTXTActionPerformed
         // TODO add your handling code here:
         lista3.KolcsonMentes();
-        System.out.println("exportálás TXT-be sikeres");
+        JOptionPane.showMessageDialog(this,"Ioans saved successfully(TXT)");
     }//GEN-LAST:event_ExportIoansTXTActionPerformed
 
     private void ImportIoansXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportIoansXMLActionPerformed
         // TODO add your handling code here:
         lista3.kolcsonListaBetoltesXML();
         lista3.KiListaz();
+        JOptionPane.showMessageDialog(this,"Ioans loaded successfully(XML)");
     }//GEN-LAST:event_ImportIoansXMLActionPerformed
 
     private void ExportIoansXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportIoansXMLActionPerformed
         // TODO add your handling code here:
         lista3.kolcsonListaToXML();
-           System.out.println("exportálás XML-be sikeres");
+        JOptionPane.showMessageDialog(this,"Ioans saved successfully(XML)");
         
     }//GEN-LAST:event_ExportIoansXMLActionPerformed
 
