@@ -227,13 +227,13 @@ public class Konyvlista implements  Serializable{
                          
                             konyvek.add(konyv);
 
-                    System.out.println("Azonosito:" + eElement.getAttribute("Azonositó"));
-                    System.out.println("Cim:" + eElement.getElementsByTagName("Cim").item(0).getTextContent());
-                    System.out.println("Iró:" + eElement.getElementsByTagName("Iró").item(0).getTextContent());
-                    System.out.println("Kiadó:" + eElement.getElementsByTagName("Kiado").item(0).getTextContent());
-                    System.out.println("Kiadás éve:" + eElement.getElementsByTagName("KiadásEve").item(0).getTextContent());
-                    System.out.println("Tárgyszavak:" + eElement.getElementsByTagName("Tárgyszavak").item(0).getTextContent());
-                    System.out.println("Hozzáférhető:" + eElement.getElementsByTagName("Hozzáférheto").item(0).getTextContent());
+//                    System.out.println("Azonosito:" + eElement.getAttribute("Azonositó"));
+//                    System.out.println("Cim:" + eElement.getElementsByTagName("Cim").item(0).getTextContent());
+//                    System.out.println("Iró:" + eElement.getElementsByTagName("Iró").item(0).getTextContent());
+//                    System.out.println("Kiadó:" + eElement.getElementsByTagName("Kiado").item(0).getTextContent());
+//                    System.out.println("Kiadás éve:" + eElement.getElementsByTagName("KiadásEve").item(0).getTextContent());
+//                    System.out.println("Tárgyszavak:" + eElement.getElementsByTagName("Tárgyszavak").item(0).getTextContent());
+//                    System.out.println("Hozzáférhető:" + eElement.getElementsByTagName("Hozzáférheto").item(0).getTextContent());
               
                 }
             }

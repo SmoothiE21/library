@@ -51,28 +51,30 @@ ArrayList<String> targyszavak = new ArrayList<>();
    Felhasznalo user3= new Felhasznalo("3f","Pál Inka","Szeszvásár, Str. Köményes, Nr.75 ", "nonalcoholist@ms.whiskey.ro",07433241);
    konyvtaros dolgozo1=new konyvtaros("1d","Könyvmoly Katalin","Marosvásárhely, Fortuna,BL25,Nr.8", "kkatalin@gmail.ro", 075464567,"ilovebooks" );
    konyvtaros dolgozo2=new konyvtaros("2d","Zokni György","Marosvásárhely, December1,BL14,Nr.2", "lyukaszokni@yahoo.com", 075434507,"oldspice" );
-  // Scanner scan = new Scanner(System.in);
-    //  System.out.println("Kölcsönzés........."+'\n');
-      //System.out.println("Kérem adja meg a könyv azonositóját: "+'\n');
-   //String a=scan.nextLine();
-     // System.out.println("Kérem adja meg a felhasználó azonositóját: "+'\n');
-   //String b=scan.nextLine();
-     // System.out.println("Kérem adja meg a saját azonositóját: "+'\n');
-   //String c=scan.nextLine();
-  //kolcson kolcsonzes1= new kolcson("1e",a,b,c,LocalDate.of(2017, 1, 13),LocalDate.of(2017, 1, 27));
+//   Scanner scan = new Scanner(System.in);
+//      System.out.println("Kölcsönzés........."+'\n');
+//      System.out.println("Kérem adja meg a könyv azonositóját: "+'\n');
+//   String a=scan.nextLine();
+//      System.out.println("Kérem adja meg a felhasználó azonositóját: "+'\n');
+//   String b=scan.nextLine();
+//      System.out.println("Kérem adja meg a saját azonositóját: "+'\n');
+//   String c=scan.nextLine();
+//  kolcson kolcsonzes1= new kolcson("1e",a,b,c,LocalDate.of(2017, 1, 13),LocalDate.of(2017, 1, 27));
+//  lista4.csatolLista(kolcsonzes1);
+//  lista4.KolcsonMentes();
    
    
 
-//    lista1.csatolLista(konyv1);
-//    lista1.csatolLista(konyv2);
-//    lista1.csatolLista(konyv3);
-//    lista1.csatolLista(konyv4);
-//    lista1.csatolLista(konyv5);
-//    lista1.csatolLista(konyv6);
-//    lista1.csatolLista(konyv7);
-//    lista1.csatolLista(konyv8);
-//    lista1.csatolLista(konyv9);
-//    lista1.csatolLista(konyv10);
+  //  lista1.csatolLista(konyv1);
+  //  lista1.csatolLista(konyv2);
+ //  lista1.csatolLista(konyv3);
+ //   lista1.csatolLista(konyv4);
+  //  lista1.csatolLista(konyv5);
+  //  lista1.csatolLista(konyv6);
+  //  lista1.csatolLista(konyv7);
+  //  lista1.csatolLista(konyv8);
+  // lista1.csatolLista(konyv9);
+ //   lista1.csatolLista(konyv10);
  
  // lista1.konyvlistaBetoltesFROMTXT();
  // lista1.KiListaz();
@@ -125,8 +127,10 @@ ArrayList<String> targyszavak = new ArrayList<>();
 //lista1.konyvListaBetoltesXML();
 //lista4.kolcsonListaBetoltesXML();
 //lista2.felhasznaloListaBetoltesXML();
-lista3.konyvtarosListaBetoltesXML();
+//lista3.konyvtarosListaBetoltesXML();
 //lista4.kolcsonListaBetoltesXML();
+
+//lista1.KonyvlistaMentes();
 
     } 
 }

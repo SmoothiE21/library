@@ -1,10 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Kölcsönök>
-<Kölcsön Azonositó="1e">
-<Könyvazonositó>1k</Könyvazonositó>
-<Felhasználóazonositó>2f</Felhasználóazonositó>
-<Könyvtárosazonositó>1d</Könyvtárosazonositó>
-<KölcsönDátum>2017-01-13</KölcsönDátum>
-<KölcsönLejárta>2017-01-27</KölcsönLejárta>
-</Kölcsön>
-</Kölcsönök>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Kölcsönök><Kölcsön Azonositó="1e"><Könyvazonositó>1k</Könyvazonositó><Felhasználóazonositó>2f</Felhasználóazonositó><Könyvtárosazonositó>1d</Könyvtárosazonositó><KölcsönDátum>2017-01-13</KölcsönDátum><KölcsönLejárta>2017-01-27</KölcsönLejárta></Kölcsön></Kölcsönök>

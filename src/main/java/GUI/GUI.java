@@ -41,6 +41,8 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jColorChooser1 = new javax.swing.JColorChooser();
+        jDialog1 = new javax.swing.JDialog();
         ScrollPanelBooks = new javax.swing.JScrollPane();
         ScrollPanelUsers = new javax.swing.JScrollPane();
         ScrollPanelIoans = new javax.swing.JScrollPane();
@@ -76,6 +78,17 @@ public class GUI extends javax.swing.JFrame {
         ModifyIoan = new javax.swing.JMenuItem();
         DeleteIoan = new javax.swing.JMenuItem();
 
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         FileMenu.setText("File");
@@ -104,7 +117,6 @@ public class GUI extends javax.swing.JFrame {
 
         ImportBooksXML.setText("ImportBooksXML");
         ImportBooksXML.setToolTipText("");
-        ImportBooksXML.setActionCommand("ImportBooksXML");
         ImportBooksXML.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ImportBooksXMLActionPerformed(evt);
@@ -325,35 +337,52 @@ public class GUI extends javax.swing.JFrame {
 
     private void ImportBookTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportBookTXTActionPerformed
         // TODO add your handling code here:
-      //  konyvlistaBetoltesFROMTXT();
+        lista1.konyvlistaBetoltesFROMTXT();
+        lista1.KiListaz();
+        System.out.println("betöltés TXT-böl sikeres");
     }//GEN-LAST:event_ImportBookTXTActionPerformed
 
     private void ExportBooksTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportBooksTXTActionPerformed
         // TODO add your handling code here:
+        lista1.KonyvlistaMentes();
+         System.out.println("exportálás TXT-be sikeres");
     }//GEN-LAST:event_ExportBooksTXTActionPerformed
 
     private void ImportBooksXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportBooksXMLActionPerformed
         // TODO add your handling code here:
+        lista1.konyvListaBetoltesXML();
+        lista1.KiListaz();
+        System.out.println("betöltés XML-ből sikeres");
     }//GEN-LAST:event_ImportBooksXMLActionPerformed
 
     private void ExportBooksXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportBooksXMLActionPerformed
         // TODO add your handling code here:
+        lista1.konyvListaToXML();
+         System.out.println("exportálás XML-be sikeres");
     }//GEN-LAST:event_ExportBooksXMLActionPerformed
 
     private void ImportUsersTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportUsersTXTActionPerformed
         // TODO add your handling code here:
+        lista2.FelhasznaloListaBetoltesFROMTXT();
+        System.out.println("importálás TXT-böl sikeres");
+        lista2.KiListaz();
     }//GEN-LAST:event_ImportUsersTXTActionPerformed
 
     private void ExportUsersTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportUsersTXTActionPerformed
         // TODO add your handling code here:
+        lista2.FelhasznaloListaMentes();
+         System.out.println("exportálás TXT-be sikeres");
     }//GEN-LAST:event_ExportUsersTXTActionPerformed
 
     private void ImportUsersXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportUsersXMLActionPerformed
         // TODO add your handling code here:
+        lista2.felhasznaloListaBetoltesXML();
+        lista2.KiListaz();
     }//GEN-LAST:event_ImportUsersXMLActionPerformed
 
     private void ExportUsersXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportUsersXMLActionPerformed
         // TODO add your handling code here:
+        lista2.felhasznaloListaToXML();
     }//GEN-LAST:event_ExportUsersXMLActionPerformed
 
     private void FileMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileMenuActionPerformed
@@ -362,18 +391,28 @@ public class GUI extends javax.swing.JFrame {
 
     private void ImportIoansTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportIoansTXTActionPerformed
         // TODO add your handling code here:
+        lista3.KolcsonListaBetoltesFROMTXT();
+        lista3.KiListaz();
+        
     }//GEN-LAST:event_ImportIoansTXTActionPerformed
 
     private void ExportIoansTXTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportIoansTXTActionPerformed
         // TODO add your handling code here:
+        lista3.KolcsonMentes();
+        System.out.println("exportálás TXT-be sikeres");
     }//GEN-LAST:event_ExportIoansTXTActionPerformed
 
     private void ImportIoansXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ImportIoansXMLActionPerformed
         // TODO add your handling code here:
+        lista3.kolcsonListaBetoltesXML();
+        lista3.KiListaz();
     }//GEN-LAST:event_ImportIoansXMLActionPerformed
 
     private void ExportIoansXMLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExportIoansXMLActionPerformed
         // TODO add your handling code here:
+        lista3.kolcsonListaToXML();
+           System.out.println("exportálás XML-be sikeres");
+        
     }//GEN-LAST:event_ExportIoansXMLActionPerformed
 
     private void ListBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListBooksActionPerformed
@@ -458,6 +497,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem AddBook;
@@ -491,8 +531,17 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollPanelIoans;
     private javax.swing.JScrollPane ScrollPanelUsers;
     private javax.swing.JMenu UserMenu;
+    private javax.swing.JColorChooser jColorChooser1;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     // End of variables declaration//GEN-END:variables
+
+    Konyvlista lista1 = new Konyvlista();
+    Felhasznalolista lista2 = new Felhasznalolista();
+    Kolcsonlista lista3 = new Kolcsonlista();
+    
 }
+
+

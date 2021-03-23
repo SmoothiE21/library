@@ -222,12 +222,12 @@ public class Konyvtaroslista {
                          
                             konyvtaroslist.add(librarians);
 
-                    System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
-                    System.out.println("Név: " + eElement.getElementsByTagName("Név").item(0).getTextContent());
-                    System.out.println("Cim : " + eElement.getElementsByTagName("Cim").item(0).getTextContent());
-                    System.out.println("Email: " + eElement.getElementsByTagName("Email").item(0).getTextContent());
-                    System.out.println("Tel : " + eElement.getElementsByTagName("Tel").item(0).getTextContent());
-                    System.out.println("Jelszó : " + eElement.getElementsByTagName("Jelszó").item(0).getTextContent());
+//                    System.out.println("Azonositó : " + eElement.getAttribute("Azonositó"));
+//                    System.out.println("Név: " + eElement.getElementsByTagName("Név").item(0).getTextContent());
+//                    System.out.println("Cim : " + eElement.getElementsByTagName("Cim").item(0).getTextContent());
+//                    System.out.println("Email: " + eElement.getElementsByTagName("Email").item(0).getTextContent());
+//                    System.out.println("Tel : " + eElement.getElementsByTagName("Tel").item(0).getTextContent());
+//                    System.out.println("Jelszó : " + eElement.getElementsByTagName("Jelszó").item(0).getTextContent());
                 }
             }
             return true;
