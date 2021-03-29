@@ -207,5 +207,8 @@ public class Kolcsonlista implements  Serializable {
         }
         return false;
     }   
+         public int Meret(){
+        return kolcsonlist.size();
+    }
         
 }

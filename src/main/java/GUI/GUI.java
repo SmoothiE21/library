@@ -23,6 +23,7 @@ import classes.ConsoleColors;
 import java.time.LocalDate;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -30,6 +31,10 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
+         tableModelBook = (DefaultTableModel) jTable1.getModel();
+         tableModelUser = (DefaultTableModel) jTable2.getModel();
+         tableModelIoan = (DefaultTableModel) jTable3.getModel();
+         
         
     }
 
@@ -45,8 +50,11 @@ public class GUI extends javax.swing.JFrame {
         jColorChooser1 = new javax.swing.JColorChooser();
         jDialog1 = new javax.swing.JDialog();
         ScrollPanelBooks = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         ScrollPanelUsers = new javax.swing.JScrollPane();
+        jTable2 = new javax.swing.JTable();
         ScrollPanelIoans = new javax.swing.JScrollPane();
+        jTable3 = new javax.swing.JTable();
         jMenuBar1 = new javax.swing.JMenuBar();
         FileMenu = new javax.swing.JMenu();
         ImportBookTXT = new javax.swing.JMenuItem();
@@ -91,6 +99,60 @@ public class GUI extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Azonosito", "Cim", "Iro", "Kiado", "Kiadas_Eve", "Hozzaferheto"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Boolean.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        ScrollPanelBooks.setViewportView(jTable1);
+
+        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Azonosito", "Nev", "Cim", "Email", "Tel"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        ScrollPanelUsers.setViewportView(jTable2);
+
+        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "KölcsönAzonosito", "KönyvAzonositó", "FelhasználóAzonositó", "KölcsönDátum", "KölcsönLejárat"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        ScrollPanelIoans.setViewportView(jTable3);
 
         FileMenu.setText("File");
         FileMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -422,6 +484,12 @@ public class GUI extends javax.swing.JFrame {
 
     private void ListBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListBooksActionPerformed
         // TODO add your handling code here:
+        //load table
+        for(int i=0 ;i < lista1.Meret(); ++i){
+              tableModelBook.insertRow(tableModelBook.getRowCount(), new Object[]{lista1.konyvek.get(i).getAzonosito(), lista1.konyvek.get(i).getCim(), lista1.konyvek.get(i).getIro(),
+                                        lista1.konyvek.get(i).getKiado(), lista1.konyvek.get(i).getKiadas_eve(), lista1.konyvek.get(i).isHozzaferheto() } );
+            }
+        
     }//GEN-LAST:event_ListBooksActionPerformed
 
     private void AddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookActionPerformed
@@ -438,6 +506,10 @@ public class GUI extends javax.swing.JFrame {
 
     private void ListUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListUsersActionPerformed
         // TODO add your handling code here:
+         for(int i=0 ;i < lista2.Meret(); ++i){
+              tableModelUser.insertRow(tableModelUser.getRowCount(), new Object[]{lista2.userlist.get(i).getAzonosito(), lista2.userlist.get(i).getNev(), lista2.userlist.get(i).getCim(),
+                                        lista2.userlist.get(i).getEmail(), lista2.userlist.get(i).getTel() } );
+            }
     }//GEN-LAST:event_ListUsersActionPerformed
 
     private void AddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserActionPerformed
@@ -454,6 +526,10 @@ public class GUI extends javax.swing.JFrame {
 
     private void ListIoansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListIoansActionPerformed
         // TODO add your handling code here:
+        for(int i=0 ;i < lista3.Meret(); ++i){
+              tableModelIoan.insertRow(tableModelIoan.getRowCount(), new Object[]{lista3.kolcsonlist.get(i).getKolcsonAzonosito(), lista3.kolcsonlist.get(i).getBookAzonosito(), lista3.kolcsonlist.get(i).getFelhasznaloAzonosito(),
+                                        lista3.kolcsonlist.get(i).getKolcsonDatum(), lista3.kolcsonlist.get(i).getKolcsonLejarat() } );
+            }
     }//GEN-LAST:event_ListIoansActionPerformed
 
     private void AddIoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddIoanActionPerformed
@@ -541,11 +617,18 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jTable2;
+    private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
 
     Konyvlista lista1 = new Konyvlista();
     Felhasznalolista lista2 = new Felhasznalolista();
     Kolcsonlista lista3 = new Kolcsonlista();
+    DefaultTableModel tableModelBook;
+    DefaultTableModel tableModelUser;
+    DefaultTableModel tableModelIoan;
+    
     
 }
 
