@@ -31,21 +31,186 @@ public class AddBook extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        AddAzonBook = new javax.swing.JLabel();
+        BookField = new javax.swing.JTextField();
+        AddCimBook = new javax.swing.JLabel();
+        BookField2 = new javax.swing.JTextField();
+        AddIroBook = new javax.swing.JLabel();
+        BookField3 = new javax.swing.JTextField();
+        AddKiadoBook = new javax.swing.JLabel();
+        BookField4 = new javax.swing.JTextField();
+        AddKiadasEveBook = new javax.swing.JLabel();
+        BookField5 = new javax.swing.JTextField();
+        SaveBookButton = new javax.swing.JButton();
+        ExitBookButton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        AddAzonBook.setText("Azonositó: ");
+
+        BookField.setToolTipText("");
+        BookField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookFieldActionPerformed(evt);
+            }
+        });
+
+        AddCimBook.setText("Cím: ");
+
+        BookField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookField2ActionPerformed(evt);
+            }
+        });
+
+        AddIroBook.setText("Író: ");
+
+        BookField3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookField3ActionPerformed(evt);
+            }
+        });
+
+        AddKiadoBook.setText("Kiadó:");
+
+        BookField4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookField4ActionPerformed(evt);
+            }
+        });
+
+        AddKiadasEveBook.setText("Kiadás Éve:");
+
+        BookField5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BookField5ActionPerformed(evt);
+            }
+        });
+
+        SaveBookButton.setBackground(new java.awt.Color(255, 0, 0));
+        SaveBookButton.setForeground(new java.awt.Color(255, 255, 255));
+        SaveBookButton.setText("Save!");
+        SaveBookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveBookButtonActionPerformed(evt);
+            }
+        });
+
+        ExitBookButton.setBackground(new java.awt.Color(0, 0, 0));
+        ExitBookButton.setForeground(new java.awt.Color(255, 255, 255));
+        ExitBookButton.setText("Exit");
+        ExitBookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ExitBookButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(AddKiadoBook, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BookField4))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(AddIroBook, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BookField3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(AddCimBook, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BookField2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(AddAzonBook, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(BookField, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(AddKiadasEveBook, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(ExitBookButton))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BookField5)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(SaveBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))))))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddAzonBook, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddCimBook, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddIroBook, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddKiadoBook, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddKiadasEveBook, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BookField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(100, 100, 100)
+                .addComponent(SaveBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ExitBookButton)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BookFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookFieldActionPerformed
+
+    private void BookField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookField2ActionPerformed
+
+    private void BookField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookField3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookField3ActionPerformed
+
+    private void BookField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookField4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookField4ActionPerformed
+
+    private void BookField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_BookField5ActionPerformed
+
+    private void SaveBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveBookButtonActionPerformed
+        // TODO add your handling code here:
+        //adatok mentése...
+        //kilépés
+        //lekérdezés jtextfield get content egy egy stringbe
+        //new konyv letrehozas, setteles
+        //konyv to konylista(add)
+        
+        
+        
+    }//GEN-LAST:event_SaveBookButtonActionPerformed
+
+    private void ExitBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ExitBookButtonActionPerformed
+        // TODO add your handling code here:
+        dispose();
+    }//GEN-LAST:event_ExitBookButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -83,5 +248,17 @@ public class AddBook extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AddAzonBook;
+    private javax.swing.JLabel AddCimBook;
+    private javax.swing.JLabel AddIroBook;
+    private javax.swing.JLabel AddKiadasEveBook;
+    private javax.swing.JLabel AddKiadoBook;
+    private javax.swing.JTextField BookField;
+    private javax.swing.JTextField BookField2;
+    private javax.swing.JTextField BookField3;
+    private javax.swing.JTextField BookField4;
+    private javax.swing.JTextField BookField5;
+    private javax.swing.JButton ExitBookButton;
+    private javax.swing.JButton SaveBookButton;
     // End of variables declaration//GEN-END:variables
 }

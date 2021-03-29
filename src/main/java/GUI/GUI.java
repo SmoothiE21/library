@@ -24,6 +24,7 @@ import java.time.LocalDate;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import GUI.AddBook;
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -105,7 +106,7 @@ public class GUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Azonosito", "Cim", "Iro", "Kiado", "Kiadas_Eve", "Hozzaferheto"
+                "Azonositó", "Cím", "Író", "Kiadó", "Kiadás éve", "Hozzáférhető"
             }
         ) {
             Class[] types = new Class [] {
@@ -123,7 +124,7 @@ public class GUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Azonosito", "Nev", "Cim", "Email", "Tel"
+                "Azonosító", "Név", "Cím", "Email", "Telefonszám"
             }
         ) {
             Class[] types = new Class [] {
@@ -141,7 +142,7 @@ public class GUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "KölcsönAzonosito", "KönyvAzonositó", "FelhasználóAzonositó", "KölcsönDátum", "KölcsönLejárat"
+                "Kölcsö nAzonosító", "Könyv Azonosító", "Felhasználó Azonosító", "Kölcsön Dátum", "Kölcsön Lejárat"
             }
         ) {
             Class[] types = new Class [] {
@@ -494,6 +495,9 @@ public class GUI extends javax.swing.JFrame {
 
     private void AddBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddBookActionPerformed
         // TODO add your handling code here:
+        AddBook sp = new AddBook();
+        sp.setVisible(true);
+
     }//GEN-LAST:event_AddBookActionPerformed
 
     private void ModifyBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyBookActionPerformed

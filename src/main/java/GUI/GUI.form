@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
     <Component class="javax.swing.JColorChooser" name="jColorChooser1">
     </Component>
@@ -308,12 +308,12 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="6" rowCount="0">
-                <Column editable="true" title="Azonosito" type="java.lang.String"/>
-                <Column editable="true" title="Cim" type="java.lang.String"/>
-                <Column editable="true" title="Iro" type="java.lang.String"/>
-                <Column editable="true" title="Kiado" type="java.lang.String"/>
-                <Column editable="true" title="Kiadas_Eve" type="java.lang.Integer"/>
-                <Column editable="true" title="Hozzaferheto" type="java.lang.Boolean"/>
+                <Column editable="true" title="Azonosit&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="C&#xed;m" type="java.lang.String"/>
+                <Column editable="true" title="&#xcd;r&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="Kiad&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="Kiad&#xe1;s &#xe9;ve" type="java.lang.Integer"/>
+                <Column editable="true" title="Hozz&#xe1;f&#xe9;rhet&#x151;" type="java.lang.Boolean"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -365,11 +365,11 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="0">
-                <Column editable="true" title="Azonosito" type="java.lang.String"/>
-                <Column editable="true" title="Nev" type="java.lang.String"/>
-                <Column editable="true" title="Cim" type="java.lang.String"/>
+                <Column editable="true" title="Azonos&#xed;t&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="N&#xe9;v" type="java.lang.String"/>
+                <Column editable="true" title="C&#xed;m" type="java.lang.String"/>
                 <Column editable="true" title="Email" type="java.lang.String"/>
-                <Column editable="true" title="Tel" type="java.lang.Integer"/>
+                <Column editable="true" title="Telefonsz&#xe1;m" type="java.lang.Integer"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -416,11 +416,11 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="0">
-                <Column editable="true" title="K&#xf6;lcs&#xf6;nAzonosito" type="java.lang.String"/>
-                <Column editable="true" title="K&#xf6;nyvAzonosit&#xf3;" type="java.lang.String"/>
-                <Column editable="true" title="Felhaszn&#xe1;l&#xf3;Azonosit&#xf3;" type="java.lang.String"/>
-                <Column editable="true" title="K&#xf6;lcs&#xf6;nD&#xe1;tum" type="java.lang.Object"/>
-                <Column editable="true" title="K&#xf6;lcs&#xf6;nLej&#xe1;rat" type="java.lang.Object"/>
+                <Column editable="true" title="K&#xf6;lcs&#xf6; nAzonos&#xed;t&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="K&#xf6;nyv Azonos&#xed;t&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="Felhaszn&#xe1;l&#xf3; Azonos&#xed;t&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="K&#xf6;lcs&#xf6;n D&#xe1;tum" type="java.lang.Object"/>
+                <Column editable="true" title="K&#xf6;lcs&#xf6;n Lej&#xe1;rat" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
