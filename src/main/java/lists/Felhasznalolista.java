@@ -49,13 +49,13 @@ public class Felhasznalolista implements Serializable{
         userlist.add(user);
     }
     
-    public Boolean torles(String Azonosito){
-        for(Felhasznalo user : userlist){
-            if(user.getAzonosito().equals(Azonosito))
-                userlist.remove(user);
-            return true;
+            public void torles(String Azonosito ){
+        for( int i = 0 ; i < userlist.size() ; ++i){
+            if (userlist.get(i).getAzonosito().equals(Azonosito)) {
+                userlist.remove(i);
+                break;
+            }
         }
-        return false;
     }
 
     public void KiListaz(){

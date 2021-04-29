@@ -25,6 +25,8 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import GUI.AddBook;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class GUI extends javax.swing.JFrame {
 
     /**
@@ -142,7 +144,7 @@ public class GUI extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Kölcsö nAzonosító", "Könyv Azonosító", "Felhasználó Azonosító", "Kölcsön Dátum", "Kölcsön Lejárat"
+                "Kölcsön Azonosító", "Könyv Azonosító", "Felhasználó Azonosító", "Kölcsön Dátum", "Kölcsön Lejárat"
             }
         ) {
             Class[] types = new Class [] {
@@ -486,6 +488,7 @@ public class GUI extends javax.swing.JFrame {
     private void ListBooksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListBooksActionPerformed
         // TODO add your handling code here:
         //load table
+        tableModelBook.setRowCount(0);
         for(int i=0 ;i < lista1.Meret(); ++i){
               tableModelBook.insertRow(tableModelBook.getRowCount(), new Object[]{lista1.konyvek.get(i).getAzonosito(), lista1.konyvek.get(i).getCim(), lista1.konyvek.get(i).getIro(),
                                         lista1.konyvek.get(i).getKiado(), lista1.konyvek.get(i).getKiadas_eve(), lista1.konyvek.get(i).isHozzaferheto() } );
@@ -506,11 +509,20 @@ public class GUI extends javax.swing.JFrame {
 
     private void DeleteBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteBookActionPerformed
         // TODO add your handling code here:
+        DeleteBook ps = new DeleteBook();
+        ps.setVisible(true);
     }//GEN-LAST:event_DeleteBookActionPerformed
+    public  void UpdateList(){
+       // ClickListener c1=new ClickListener();
+       // tableModelUser.addActionListener(c1);
+        
+        ListUsers.doClick();
+}
 
     private void ListUsersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListUsersActionPerformed
         // TODO add your handling code here:
-         for(int i=0 ;i < lista2.Meret(); ++i){
+         tableModelUser.setRowCount(0);   
+         for(int i=0 ;i < lista2.Meret(); i++){
               tableModelUser.insertRow(tableModelUser.getRowCount(), new Object[]{lista2.userlist.get(i).getAzonosito(), lista2.userlist.get(i).getNev(), lista2.userlist.get(i).getCim(),
                                         lista2.userlist.get(i).getEmail(), lista2.userlist.get(i).getTel() } );
             }
@@ -518,6 +530,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void AddUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddUserActionPerformed
         // TODO add your handling code here:
+        AddUser sp = new AddUser();
+        sp.setVisible(true);
     }//GEN-LAST:event_AddUserActionPerformed
 
     private void ModifyUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyUserActionPerformed
@@ -526,18 +540,26 @@ public class GUI extends javax.swing.JFrame {
 
     private void DeleteUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteUserActionPerformed
         // TODO add your handling code here:
+        DeleteUser ff = new DeleteUser();
+        ff.setVisible(true);
     }//GEN-LAST:event_DeleteUserActionPerformed
 
     private void ListIoansActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListIoansActionPerformed
         // TODO add your handling code here:
+        tableModelIoan.setRowCount(0);
         for(int i=0 ;i < lista3.Meret(); ++i){
               tableModelIoan.insertRow(tableModelIoan.getRowCount(), new Object[]{lista3.kolcsonlist.get(i).getKolcsonAzonosito(), lista3.kolcsonlist.get(i).getBookAzonosito(), lista3.kolcsonlist.get(i).getFelhasznaloAzonosito(),
                                         lista3.kolcsonlist.get(i).getKolcsonDatum(), lista3.kolcsonlist.get(i).getKolcsonLejarat() } );
             }
+        
+        
+        
     }//GEN-LAST:event_ListIoansActionPerformed
 
     private void AddIoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddIoanActionPerformed
         // TODO add your handling code here:
+           AddIoan oo = new AddIoan();
+        oo.setVisible(true);
     }//GEN-LAST:event_AddIoanActionPerformed
 
     private void ModifyIoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifyIoanActionPerformed
@@ -546,6 +568,8 @@ public class GUI extends javax.swing.JFrame {
 
     private void DeleteIoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteIoanActionPerformed
         // TODO add your handling code here:
+        DeleteIoan hoho = new DeleteIoan();
+        hoho.setVisible(true);
     }//GEN-LAST:event_DeleteIoanActionPerformed
 
     /**
@@ -626,9 +650,9 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JTable jTable3;
     // End of variables declaration//GEN-END:variables
 
-    Konyvlista lista1 = new Konyvlista();
-    Felhasznalolista lista2 = new Felhasznalolista();
-    Kolcsonlista lista3 = new Kolcsonlista();
+   public static  Konyvlista lista1 = new Konyvlista();
+   public static Felhasznalolista lista2 = new Felhasznalolista();
+   public static Kolcsonlista lista3 = new Kolcsonlista();
     DefaultTableModel tableModelBook;
     DefaultTableModel tableModelUser;
     DefaultTableModel tableModelIoan;

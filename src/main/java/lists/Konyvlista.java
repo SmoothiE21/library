@@ -54,13 +54,24 @@ public class Konyvlista implements  Serializable{
         konyvek.add(konyv);
     }
     
-    public Boolean torles(String Azonosito){
-        for(Book konyv : konyvek){
-            if(konyv.getAzonosito().equals(Azonosito))
-                konyvek.remove(konyv);
-            return true;
+//    public Boolean torles(String Azonosito){
+//        for(Book konyv : konyvek){
+//            if(konyv.getAzonosito().equals(Azonosito))
+//                konyvek.remove(konyv);
+//            return true;
+//        }
+//        return false;
+//    }
+
+        
+
+            public void torles(String Azonosito ){
+        for( int i = 0 ; i < konyvek.size() ; ++i){
+            if (konyvek.get(i).getAzonosito().equals(Azonosito)) {
+                konyvek.remove(i);
+                break;
+            }
         }
-        return false;
     }
 
     public void KiListaz(){

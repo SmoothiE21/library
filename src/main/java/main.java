@@ -51,17 +51,17 @@ ArrayList<String> targyszavak = new ArrayList<>();
    Felhasznalo user3= new Felhasznalo("3f","Pál Inka","Szeszvásár, Str. Köményes, Nr.75 ", "nonalcoholist@ms.whiskey.ro",07433241);
    konyvtaros dolgozo1=new konyvtaros("1d","Könyvmoly Katalin","Marosvásárhely, Fortuna,BL25,Nr.8", "kkatalin@gmail.ro", 075464567,"ilovebooks" );
    konyvtaros dolgozo2=new konyvtaros("2d","Zokni György","Marosvásárhely, December1,BL14,Nr.2", "lyukaszokni@yahoo.com", 075434507,"oldspice" );
-   Scanner scan = new Scanner(System.in);
-      System.out.println("Kölcsönzés........."+'\n');
-      System.out.println("Kérem adja meg a könyv azonositóját: "+'\n');
-   String a=scan.nextLine();
-      System.out.println("Kérem adja meg a felhasználó azonositóját: "+'\n');
-   String b=scan.nextLine();
-     System.out.println("Kérem adja meg a saját azonositóját: "+'\n');
-   String c=scan.nextLine();
-  kolcson kolcsonzes1= new kolcson("1e",a,b,c,LocalDate.of(2017, 1, 13),LocalDate.of(2017, 1, 27));
-  lista4.csatolLista(kolcsonzes1);
-  lista4.KolcsonMentes();
+  // Scanner scan = new Scanner(System.in);
+    //  System.out.println("Kölcsönzés........."+'\n');
+     // System.out.println("Kérem adja meg a könyv azonositóját: "+'\n');
+   //String a=scan.nextLine();
+     // System.out.println("Kérem adja meg a felhasználó azonositóját: "+'\n');
+   //String b=scan.nextLine();
+    // System.out.println("Kérem adja meg a saját azonositóját: "+'\n');
+  // String c=scan.nextLine();
+ // kolcson kolcsonzes1= new kolcson("1e",a,b,c,LocalDate.of(2017, 1, 13),LocalDate.of(2017, 1, 27));
+  //lista4.csatolLista(kolcsonzes1);
+ // lista4.KolcsonMentes();
    
    
 
@@ -87,7 +87,7 @@ ArrayList<String> targyszavak = new ArrayList<>();
 //lista2.csatolLista(user1);
 //lista2.csatolLista(user2);
 //lista2.csatolLista(user3);
-//lista2.FelhasznaloListaMentes();
+//lista2.felhasznaloListaToXML();
 
 //lista2.FelhasznaloListaBetoltesFROMTXT();
 //lista2.KiListaz();

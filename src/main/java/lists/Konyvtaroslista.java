@@ -48,13 +48,13 @@ public class Konyvtaroslista {
         konyvtaroslist.add(alkalmazott);
     }
     
-    public Boolean torles(String Azonosito){
-        for(konyvtaros alkalmazott : konyvtaroslist){
-            if(alkalmazott.getAzonosito().equals(Azonosito))
-                konyvtaroslist.remove(alkalmazott);
-            return true;
+            public void torles(String Azonosito ){
+        for( int i = 0 ; i < konyvtaroslist.size() ; ++i){
+            if (konyvtaroslist.get(i).getAzonosito().equals(Azonosito)) {
+                konyvtaroslist.remove(i);
+                break;
+            }
         }
-        return false;
     }
 
     public void KiListaz(){

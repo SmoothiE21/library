@@ -50,13 +50,13 @@ public class Kolcsonlista implements  Serializable {
         kolcsonlist.add(kolcsonzes);
     }
     
-    public Boolean torles(String Azonosito){
-        for(kolcson kolcsonzes : kolcsonlist){
-            if(kolcsonzes.getKolcsonAzonosito().equals(Azonosito))
-                kolcsonlist.remove(kolcsonzes);
-            return true;
+            public void torles(String Azonosito ){
+        for( int i = 0 ; i < kolcsonlist.size() ; ++i){
+            if (kolcsonlist.get(i).getKolcsonAzonosito().equals(Azonosito)) {
+                kolcsonlist.remove(i);
+                break;
+            }
         }
-        return false;
     }
 
     public void KiListaz(){

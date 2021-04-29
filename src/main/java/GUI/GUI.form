@@ -416,7 +416,7 @@
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
               <Table columnCount="5" rowCount="0">
-                <Column editable="true" title="K&#xf6;lcs&#xf6; nAzonos&#xed;t&#xf3;" type="java.lang.String"/>
+                <Column editable="true" title="K&#xf6;lcs&#xf6;n Azonos&#xed;t&#xf3;" type="java.lang.String"/>
                 <Column editable="true" title="K&#xf6;nyv Azonos&#xed;t&#xf3;" type="java.lang.String"/>
                 <Column editable="true" title="Felhaszn&#xe1;l&#xf3; Azonos&#xed;t&#xf3;" type="java.lang.String"/>
                 <Column editable="true" title="K&#xf6;lcs&#xf6;n D&#xe1;tum" type="java.lang.Object"/>
